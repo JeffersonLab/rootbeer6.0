@@ -1,0 +1,43 @@
+cd $ROOTBEER
+make
+//bankdump works like bosdump, on .BOS or .root files
+
+bankdump
+bankdump rbtest.root
+bankdump -N10 /work/clas/disk3/clasg8/testlinks/Pass0/v5/BOS/cooked_048105.A01.B01
+
+
+//getbanks utility to get the banks in a file
+getbanks -N100 /work/clas/disk3/clasg8/testlinks/Pass0/v5/BOS/cooked_048105.A01.B01
+
+//look at rbtest.C
+
+//start rootbeer
+rootbeer
+
+//load macro
+.L rbtest.C
+
+//run function same as macro name - completion by tabbing
+rbtest(1000,"rbtestDST.root","dummy")
+
+//edit and rerun
+
+//make executable
+mkexe("sample_code/rbtest.C","")
+mkexe_deb("sample_code/rbtest.C","")
+
+rehash
+
+//or make library
+mklib("sample_code/rbtest.C")
+mklib_deb("sample_code/rbtest.C")
+
+rehash
+
+//look at dstmaker.C
+
+.L dstmaker.C
+mkexe("sample_code/dstmaker.C","")
+
+dstmaker rbtestDST.root testdst.root

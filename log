@@ -1,0 +1,36 @@
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./TRootBeer.o -c src/TRootBeer.cxx
+Generating dictionary RootBeerDict...
+/cern/root/v6.08.06/bin/rootcint -f src/RootBeerDict.cxx -c \
+		include/TRootBeer.h include/RootBeerLinkDef.h
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./RootBeerDict.o -c src/RootBeerDict.cxx
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./TBos.o -c src/TBos.cxx
+Generating dictionary BosDict...
+/cern/root/v6.08.06/bin/rootcint -f src/BosDict.cxx -c include/TBos.h \
+		include/BosLinkDef.h
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./BosDict.o -c src/BosDict.cxx
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./TCLASParticle.o -c src/TCLASParticle.cxx
+Generating dictionary CLASParticleDict...
+/cern/root/v6.08.06/bin/rootcint -f src/CLASParticleDict.cxx -c include/TCLASParticle.h \
+		include/CLASParticleLinkDef.h
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./CLASParticleDict.o -c src/CLASParticleDict.cxx
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./TDST.o -c src/TDST.cxx
+Generating dictionary BosDict...
+/cern/root/v6.08.06/bin/rootcint -f src/DSTDict.cxx -c include/TDST.h \
+		include/DSTLinkDef.h
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./DSTDict.o -c src/DSTDict.cxx
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./RootBeerUtil.o -c src/RootBeerUtil.cxx
+Generating dictionary BosDict...
+/cern/root/v6.08.06/bin/rootcint -f src/RootBeerUtilDict.cxx -c \
+			include/RootBeerUtil.h include/RootBeerUtilLinkDef.h
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./RootBeerUtilDict.o -c src/RootBeerUtilDict.cxx
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./TDSTWriter.o -c src/TDSTWriter.cxx
+Generating dictionary BosDict...
+/cern/root/v6.08.06/bin/rootcint -f src/DSTWriterDict.cxx -c include/TDSTWriter.h \
+		include/DSTWriterLinkDef.h
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./DSTWriterDict.o -c src/DSTWriterDict.cxx
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./bankvars.o -c src/bankvars.cxx
+Generating dictionary bankvarsDict...
+/cern/root/v6.08.06/bin/rootcint -f src/bankvarsDict.cxx -c \
+		include/bankvars.h include/bankvarsLinkDef.h
+g++ -pthread -std=c++11 -m64 -I/cern/root/v6.08.06/include -I./ -Iinclude  -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./bankvarsDict.o -c src/bankvarsDict.cxx
+g++ -shared -O2 -Wall -Wno-deprecated -Wno-unused -o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/slib/Linux64RH7./libRootBeer.so /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./TRootBeer.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./RootBeerDict.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./TBos.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./BosDict.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./TCLASParticle.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./CLASParticleDict.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./TDST.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./DSTDict.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./RootBeerUtil.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./RootBeerUtilDict.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./TDSTWriter.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./DSTWriterDict.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./bankvars.o /home/dglazier/dglazier2/Research/Jlab/rootbeer6.0/obj/Linux64RH7./bankvarsDict.o -L/cern/root/v6.08.06/lib -lCore -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -pthread -lm -ldl -rdynamic -lThread
