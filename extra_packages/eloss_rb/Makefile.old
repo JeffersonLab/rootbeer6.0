@@ -35,7 +35,7 @@ G77		= gfortran
 # allow debugging with >make DEBUG=1 
 ifeq ($(DEBUG),1)
 CXXFLAGS      	= -g -Wall -Wno-deprecated -DR__THREAD -fno-exceptions -fno-strict-aliasing \
-		-fPIC -I$(ROOTSYS) -I./
+		-fPIC -I$(ROOTSYS)/include -I./
 CFLAGS	      	= -g -Wno-deprecated -D_REENTRANT -fno-strict-aliasing
 #FFLAGS	      	= -g-mcpu=pentium -fno-automatic -finit-local-zero -ffixed-line-length-none \
 #		-fno-second-underscore -DLinux
@@ -56,7 +56,7 @@ else
 
 CFLAGS		= -O2 -Wno-deprecated -Wno-unused -D_REENTRANT -fno-strict-aliasing
 CXXFLAGS      	= -O2 -Wno-deprecated -Wno-unused -Wall -DR__THREAD \
-		-fno-exceptions -fno-strict-aliasing -fPIC -I$(ROOTSYS) -I./
+		-fno-exceptions -fno-strict-aliasing -fPIC -I$(ROOTSYS)/include -I./
 LDFLAGS       	= -O2 -Wall -Wno-deprecated -Wno-unused
 #FFLAGS		=-O2 -mcpu=pentium -fno-automatic -finit-local-zero -ffixed-line-length-none \
 #		-fno-second-underscore -DLinux
