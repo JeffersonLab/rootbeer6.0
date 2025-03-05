@@ -1,0 +1,113 @@
+#!/bin/sh
+jcache -w -f dat/cache1
+extract_amo -Ldat/cache_mss_flist_47923 /scratch/clasg8/amoroot/amo_run_47923.root 
+extract_amo -Ldat/cache_mss_flist_47927 /scratch/clasg8/amoroot/amo_run_47927.root 
+extract_amo -Ldat/cache_mss_flist_47931 /scratch/clasg8/amoroot/amo_run_47931.root 
+extract_amo -Ldat/cache_mss_flist_47935 /scratch/clasg8/amoroot/amo_run_47935.root 
+extract_amo -Ldat/cache_mss_flist_47939 /scratch/clasg8/amoroot/amo_run_47939.root 
+extract_amo -Ldat/cache_mss_flist_47945 /scratch/clasg8/amoroot/amo_run_47945.root 
+extract_amo -Ldat/cache_mss_flist_47951 /scratch/clasg8/amoroot/amo_run_47951.root 
+extract_amo -Ldat/cache_mss_flist_47955 /scratch/clasg8/amoroot/amo_run_47955.root 
+extract_amo -Ldat/cache_mss_flist_47959 /scratch/clasg8/amoroot/amo_run_47959.root 
+extract_amo -Ldat/cache_mss_flist_47994 /scratch/clasg8/amoroot/amo_run_47994.root
+				       	        
+jcache -w -f dat/cache2	
+extract_amo -Ldat/cache_mss_flist_48023 /scratch/clasg8/amoroot/amo_run_48023.root 
+extract_amo -Ldat/cache_mss_flist_48028 /scratch/clasg8/amoroot/amo_run_48028.root 
+extract_amo -Ldat/cache_mss_flist_48032 /scratch/clasg8/amoroot/amo_run_48032.root 
+extract_amo -Ldat/cache_mss_flist_48037 /scratch/clasg8/amoroot/amo_run_48037.root 
+extract_amo -Ldat/cache_mss_flist_48041 /scratch/clasg8/amoroot/amo_run_48041.root 
+extract_amo -Ldat/cache_mss_flist_48045 /scratch/clasg8/amoroot/amo_run_48045.root 
+extract_amo -Ldat/cache_mss_flist_48050 /scratch/clasg8/amoroot/amo_run_48050.root 
+extract_amo -Ldat/cache_mss_flist_48063 /scratch/clasg8/amoroot/amo_run_48063.root 
+extract_amo -Ldat/cache_mss_flist_48073 /scratch/clasg8/amoroot/amo_run_48073.root 
+				       	        
+jcache -w -f dat/cache3	
+extract_amo -Ldat/cache_mss_flist_48077 /scratch/clasg8/amoroot/amo_run_48077.root 
+extract_amo -Ldat/cache_mss_flist_48083 /scratch/clasg8/amoroot/amo_run_48083.root 
+extract_amo -Ldat/cache_mss_flist_48092 /scratch/clasg8/amoroot/amo_run_48092.root 
+extract_amo -Ldat/cache_mss_flist_48097 /scratch/clasg8/amoroot/amo_run_48097.root 
+extract_amo -Ldat/cache_mss_flist_48101 /scratch/clasg8/amoroot/amo_run_48101.root 
+extract_amo -Ldat/cache_mss_flist_48106 /scratch/clasg8/amoroot/amo_run_48106.root 
+extract_amo -Ldat/cache_mss_flist_48111 /scratch/clasg8/amoroot/amo_run_48111.root 
+extract_amo -Ldat/cache_mss_flist_48112 /scratch/clasg8/amoroot/amo_run_48112.root 
+extract_amo -Ldat/cache_mss_flist_48133 /scratch/clasg8/amoroot/amo_run_48133.root 
+extract_amo -Ldat/cache_mss_flist_48138 /scratch/clasg8/amoroot/amo_run_48138.root 
+				       	        
+jcache -w -f dat/cache4	
+extract_amo -Ldat/cache_mss_flist_48147 /scratch/clasg8/amoroot/amo_run_48147.root 
+extract_amo -Ldat/cache_mss_flist_48151 /scratch/clasg8/amoroot/amo_run_48151.root 
+extract_amo -Ldat/cache_mss_flist_48155 /scratch/clasg8/amoroot/amo_run_48155.root 
+extract_amo -Ldat/cache_mss_flist_48160 /scratch/clasg8/amoroot/amo_run_48160.root 
+extract_amo -Ldat/cache_mss_flist_48177 /scratch/clasg8/amoroot/amo_run_48177.root 
+extract_amo -Ldat/cache_mss_flist_48184 /scratch/clasg8/amoroot/amo_run_48184.root 
+extract_amo -Ldat/cache_mss_flist_48188 /scratch/clasg8/amoroot/amo_run_48188.root 
+extract_amo -Ldat/cache_mss_flist_48193 /scratch/clasg8/amoroot/amo_run_48193.root 
+extract_amo -Ldat/cache_mss_flist_48197 /scratch/clasg8/amoroot/amo_run_48197.root 
+				       	        
+jcache -w -f dat/cache5	
+extract_amo -Ldat/cache_mss_flist_48211 /scratch/clasg8/amoroot/amo_run_48211.root 
+extract_amo -Ldat/cache_mss_flist_48215 /scratch/clasg8/amoroot/amo_run_48215.root 
+extract_amo -Ldat/cache_mss_flist_48216 /scratch/clasg8/amoroot/amo_run_48216.root 
+extract_amo -Ldat/cache_mss_flist_48217 /scratch/clasg8/amoroot/amo_run_48217.root 
+extract_amo -Ldat/cache_mss_flist_48237 /scratch/clasg8/amoroot/amo_run_48237.root 
+extract_amo -Ldat/cache_mss_flist_48238 /scratch/clasg8/amoroot/amo_run_48238.root 
+extract_amo -Ldat/cache_mss_flist_48252 /scratch/clasg8/amoroot/amo_run_48252.root 
+extract_amo -Ldat/cache_mss_flist_48253 /scratch/clasg8/amoroot/amo_run_48253.root 
+extract_amo -Ldat/cache_mss_flist_48254 /scratch/clasg8/amoroot/amo_run_48254.root 
+extract_amo -Ldat/cache_mss_flist_48265 /scratch/clasg8/amoroot/amo_run_48265.root 
+				       	        
+jcache -w -f dat/cache6
+extract_amo -Ldat/cache_mss_flist_48287 /scratch/clasg8/amoroot/amo_run_48287.root 
+extract_amo -Ldat/cache_mss_flist_48290 /scratch/clasg8/amoroot/amo_run_48290.root 
+extract_amo -Ldat/cache_mss_flist_48299 /scratch/clasg8/amoroot/amo_run_48299.root 
+extract_amo -Ldat/cache_mss_flist_48301 /scratch/clasg8/amoroot/amo_run_48301.root 
+extract_amo -Ldat/cache_mss_flist_48302 /scratch/clasg8/amoroot/amo_run_48302.root 
+extract_amo -Ldat/cache_mss_flist_48305 /scratch/clasg8/amoroot/amo_run_48305.root 
+extract_amo -Ldat/cache_mss_flist_48306 /scratch/clasg8/amoroot/amo_run_48306.root 
+extract_amo -Ldat/cache_mss_flist_48307 /scratch/clasg8/amoroot/amo_run_48307.root 
+extract_amo -Ldat/cache_mss_flist_48308 /scratch/clasg8/amoroot/amo_run_48308.root 
+extract_amo -Ldat/cache_mss_flist_48352 /scratch/clasg8/amoroot/amo_run_48352.root 
+				       	        
+jcache -w -f dat/cache7	
+extract_amo -Ldat/cache_mss_flist_48353 /scratch/clasg8/amoroot/amo_run_48353.root 
+extract_amo -Ldat/cache_mss_flist_48354 /scratch/clasg8/amoroot/amo_run_48354.root 
+extract_amo -Ldat/cache_mss_flist_48355 /scratch/clasg8/amoroot/amo_run_48355.root 
+extract_amo -Ldat/cache_mss_flist_48381 /scratch/clasg8/amoroot/amo_run_48381.root 
+extract_amo -Ldat/cache_mss_flist_48382 /scratch/clasg8/amoroot/amo_run_48382.root 
+extract_amo -Ldat/cache_mss_flist_48383 /scratch/clasg8/amoroot/amo_run_48383.root 
+extract_amo -Ldat/cache_mss_flist_48384 /scratch/clasg8/amoroot/amo_run_48384.root 
+extract_amo -Ldat/cache_mss_flist_48385 /scratch/clasg8/amoroot/amo_run_48385.root 
+extract_amo -Ldat/cache_mss_flist_48386 /scratch/clasg8/amoroot/amo_run_48386.root 
+extract_amo -Ldat/cache_mss_flist_48387 /scratch/clasg8/amoroot/amo_run_48387.root 
+				       	        
+jcache -w -f dat/cache8
+extract_amo -Ldat/cache_mss_flist_48413 /scratch/clasg8/amoroot/amo_run_48413.root 
+extract_amo -Ldat/cache_mss_flist_48414 /scratch/clasg8/amoroot/amo_run_48414.root 
+extract_amo -Ldat/cache_mss_flist_48415 /scratch/clasg8/amoroot/amo_run_48415.root 
+extract_amo -Ldat/cache_mss_flist_48416 /scratch/clasg8/amoroot/amo_run_48416.root 
+extract_amo -Ldat/cache_mss_flist_48417 /scratch/clasg8/amoroot/amo_run_48417.root 
+extract_amo -Ldat/cache_mss_flist_48427 /scratch/clasg8/amoroot/amo_run_48427.root 
+extract_amo -Ldat/cache_mss_flist_48428 /scratch/clasg8/amoroot/amo_run_48428.root 
+extract_amo -Ldat/cache_mss_flist_48429 /scratch/clasg8/amoroot/amo_run_48429.root 
+extract_amo -Ldat/cache_mss_flist_48430 /scratch/clasg8/amoroot/amo_run_48430.root 
+extract_amo -Ldat/cache_mss_flist_48456 /scratch/clasg8/amoroot/amo_run_48456.root 
+				       	        
+jcache -w -f dat/cache9	
+extract_amo -Ldat/cache_mss_flist_48460 /scratch/clasg8/amoroot/amo_run_48460.root 
+extract_amo -Ldat/cache_mss_flist_48461 /scratch/clasg8/amoroot/amo_run_48461.root 
+extract_amo -Ldat/cache_mss_flist_48489 /scratch/clasg8/amoroot/amo_run_48489.root 
+extract_amo -Ldat/cache_mss_flist_48492 /scratch/clasg8/amoroot/amo_run_48492.root 
+extract_amo -Ldat/cache_mss_flist_48530 /scratch/clasg8/amoroot/amo_run_48530.root 
+extract_amo -Ldat/cache_mss_flist_48531 /scratch/clasg8/amoroot/amo_run_48531.root 
+extract_amo -Ldat/cache_mss_flist_48575 /scratch/clasg8/amoroot/amo_run_48575.root 
+extract_amo -Ldat/cache_mss_flist_48576 /scratch/clasg8/amoroot/amo_run_48576.root 
+extract_amo -Ldat/cache_mss_flist_48578 /scratch/clasg8/amoroot/amo_run_48578.root 
+				       	        
+jcache -w -f dat/cache10
+extract_amo -Ldat/cache_mss_flist_48579 /scratch/clasg8/amoroot/amo_run_48579.root 
+extract_amo -Ldat/cache_mss_flist_48635 /scratch/clasg8/amoroot/amo_run_48635.root 
+extract_amo -Ldat/cache_mss_flist_48641 /scratch/clasg8/amoroot/amo_run_48641.root 
+extract_amo -Ldat/cache_mss_flist_48642 /scratch/clasg8/amoroot/amo_run_48642.root 
+extract_amo -Ldat/cache_mss_flist_48643 /scratch/clasg8/amoroot/amo_run_48643.root 
+extract_amo -Ldat/cache_mss_flist_48644 /scratch/clasg8/amoroot/amo_run_48644.root
