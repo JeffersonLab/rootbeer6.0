@@ -1,114 +1,91 @@
-/*
-*
-*  vector4.c
-*
-*/
+************************************************************************
+release note 02/14/2005
 
-#include <math.h>
-#include <stdlib.h>
-#include <ntypes.h>
-#include <kinematics.h>
+- Bug in pcorpppm_tm.F was fixed (Marco)
+- Comments in choosepcor.F were corrected (Tsutomu)
 
-float v4dot(vector4_t p1,vector4_t p2)
-{
-  float dot;
+************************************************************************
+release note 02/11/2005
 
-  dot = p1.t * p2.t - p1.space.x * p2.space.x - p1.space.y * p2.space.y
-          - p1.space.z * p2.space.z;
+This is a set of subroutines for momentum corrections for g10 data set.
+The corrections have been determined from three independent analysis;
+(1) 4-momentum conservation in gamma + d --> p + p + pi^- reaction 
+(2) transverse momentum conservation in gamma + d --> p + p + pi^- reaction 
+(3) Ks^0 mass in Ks^0 --> pi^+ + pi^- decay mode.
+This function provides above three corrections and a hybrid correction 
+which combines the analysis (1) and (3).
 
-  return dot;
-}
+Main subroutine is g10pcor which is a Fortran subroutine.
+C-wrapper is available for c-based codes. 
+The calling sequences are similar to the ELOSS package.
+PAW based analysis needs additional prescriptions.
 
-float v4mass(vector4_t p)
-{
-  float mag = 0;
-  float mmsq = v4dot(p,p);
+-----------------------
+Building library 
 
-  if (mmsq >= 0){
-    mag = sqrt(mmsq);
-  } else {
-    mag = -1;
-  }
+There is a Makefile in this package. Run 'make lib' and it will build
+g10pcor library. Then you can link it with your program.
 
-  return mag;
-}
-float v4magsq(vector4_t p)
-{
-  float magsq;
+-----------------------
+Calling sequence (Fortran):
 
-  magsq = v4dot(p,p);
+* initialization
+No initialization is necessary at this moment.
+However, we keep Initg10pcor for future development. 
+Currently the initialization function Initg10pcor 
+only checks input parameters. 
 
-  return magsq;
-}
+* applying a correction
+call g10pcor(torus,icharge,pold,icor,pnew,istat)
 
-vector4_t v4add(vector4_t p1,vector4_t p2)
-{
-  vector4_t sum;
-
-  sum.t = p1.t + p2.t;
-  sum.space.x = p1.space.x + p2.space.x;
-  sum.space.y = p1.space.y + p2.space.y;
-  sum.space.z = p1.space.z + p2.space.z;
-
-  return sum;
-}
-
-vector4_t v4sub(vector4_t p1,vector4_t p2)
-{
-  vector4_t diff;
-
-  diff.t = p1.t - p2.t;
-  diff.space.x = p1.space.x - p2.space.x;
-  diff.space.y = p1.space.y - p2.space.y;
-  diff.space.z = p1.space.z - p2.space.z;
-
-  return diff;
-}
-
-vector4_t v4mult(float factor,vector4_t p)
-{
-  vector4_t result;
-
-  result.t = p.t * factor;
-  result.space.x = p.space.x * factor;
-  result.space.y = p.space.y * factor;
-  result.space.z = p.space.z * factor;
-
-  return result;
-}
-
-vector4_t v4div(float divisor,vector4_t p)
-{
-  vector4_t result;
-
-  result.t = p.t / divisor;
-  result.space.x = p.space.x / divisor;
-  result.space.y = p.space.y / divisor;
-  result.space.z = p.space.z / divisor;
-
-  return result;
-}
+     Inputs:
+        torus  : integer, torus current (Ampere)
+        icharge: integer, charge of particle 
+        pold(3): real,  3 momentum before momentum correction
+                        (after ELOSS correction)
+        icor   : choice of correction functions
+                  = 1 : pppm MM correction (1)
+                  = 2 : pppm TM correction (2)
+                  = 3 : K0   NB correction (3)
+                  = 4 : Combined correction (currently, 1+3)
+     Outputs
+        pnew(3): real, 3 momentum after correction
+        istat  : integer,
+                  < 0 : error
+                  = 1 : correction was measured
+                  = 2 : correction was not measured, extrapolated
 
 
-vector4_t v3_to_v4(vector3_t *vec3, float mass){
-  vector4_t v4;
-  
-  v4.space.x = vec3->x;
-  v4.space.y = vec3->y;
-  v4.space.z = vec3->z;
+-----------------------
+Calling sequence (C-code):
 
-  v4.t = sqrt(mass*mass + v3dot(v4.space, v4.space));
+include the prototype definition with: 
+#include <g10pcor.h>             
 
-  return v4;
-}
+* initialization
+No initialization is necessary at this moment.
+But you can still call Initg10pcor to check input parameters.
 
-vector4_t txyz2v4(void *txyz){
-  vector4_t v4;
-  return(*((vector4_t *)(txyz)));
-}
+* applying a correction
+The c function c_g10pcor is a wrapper for the Fortran subroutines.
+
+istat =c_g10pcor(torus, icharge, icor, &p4);
+
+p4 is a measured 4-momentum vector (vector4_t) corrected for the 
+target energy loss. As explained above, 
+torus, icharge, icor are input parameters. This routine 
+passes the inputs to the main routine (g10pcor) and updates 4-vector p4.
+A status (istat) is returned from this function.
+
+-----------------------
+Calling sequence (in PAW):
+
+(in preparation)
 
 
-void v4print(FILE *stream, vector4_t vec){
-  fprintf(stream, "t: %f, x: %f, y:%f, z:%f\n", vec.t, vec.space.x, vec.space.y, vec.space.z);
-}
+-----------------------
+Please give us bug reports or suggestions.
 
+Tsutomu Mibe    (mibe@jlab.org)
+Nathan Baltzell (baltzell@jlab.org)
+Marco Mirazita  (mirazita@jlab.org)
