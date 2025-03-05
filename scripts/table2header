@@ -1,0 +1,92 @@
+#!/bin/sh
+
+if [ $# -lt 1 ]; then
+    echo
+    echo "Description: A utility to generate a header file from a runtable (for TExpTable)"
+    echo
+    echo "Usage: table2header <runtable>"
+    exit
+fi
+#full name of the table
+fulltable=$1;
+#with dir stripped off
+table=`basename $fulltable`
+#header will have directory and any suffic stripped off, and .h added
+header=`basename $fulltable | gawk 'BEGIN{FS="."}{printf"%s.h",$1}'`
+
+
+#use awk to collect the variable names and format specifiers from the top lines of the table
+#and write the header file
+
+gawk '
+{
+  if($1=="Variables:"){    #save all var names in vars[]
+    cols=NF;
+    for(n=2;n<=NF;n++){
+      vars[n]=$n;
+    }
+  }
+  if($1=="Types:"){         #save all format specifiers in form[]
+    for(n=2;n<=NF;n++){
+      form[n]=$n;
+    }
+  }
+}
+END{                        #print out variables and struct into a header file
+
+  printf"#include \"TExpTable.h\"\n\n";  
+  printf"//variables which relate to the columns in the run table";
+  for(n=1;n<=cols;n++){
+    if(form[n]~"%d") variable=sprintf("Int_t\tRT_%s;",vars[n]); 
+    if(form[n]~"%f") variable=sprintf("Float_t\tRT_%s;",vars[n]);  
+    if(form[n]~"%s") variable=sprintf("Char_t\tRT_%s[120];",vars[n]);
+    print variable;
+  }
+
+  printf"\n\n//struct relating the variables to the column headings in the run table\n";
+  printf"struct VarNames RunTableVariables[] = {\n";
+  for(n=2;n<=cols;n++){
+    if((form[n]~"%d")||(form[n]~"%f")) variable=sprintf("  {\"%s\",\t&RT_%s},",vars[n],vars[n]); 
+    if(form[n]~"%s") variable=sprintf("  {\"%s\",\tRT_%s},",vars[n],vars[n]); 
+    print variable;
+  }
+  printf"  {NULL,\tNULL},\n};\n";  
+}' $fulltable > $header
+
+echo "Char_t *RunTableName = \"$table\";" >> $header
+
+
+# And print some primitive suggestion on how to use it.
+
+echo
+echo "Defined variables in header file: $header"
+echo
+echo "You need to include this in your analysis code"
+echo "Something like this"
+echo
+echo //----------------------------------- myanalysis.C -----------------------------------------
+echo "#include \"$header\""
+echo "..."
+echo "..." 
+echo "..."
+echo "class TExpTable *expTable;"
+echo "..." 
+echo "..."
+echo "char **filelist[]={\"clas_47848.A00.root\",\"clas_47849.A02.root\",.....,NULL};"
+echo "..."
+echo "myanalysis(){"
+echo "  char *file;"
+echo "  int fcounter=0,run;"
+echo "  expTable = new TExpTable(\"dat/allruns.dat\",RunTableVariables); //create a table object"
+echo "  ..." 
+echo "  ..."
+echo "  while((file=filelist[fcounter++])!=NULL){                      //loop over all files"
+echo "    sscanf(strchr(file,'_')+1,\"%d\",&run);                        //get run number from filename"
+echo "    expTable->GetAllForValue(run,\"Run\");                         //update all variables for this run"
+echo ""      
+echo "    if(RT_Radiat==AMO) myAmoFileRoutine();                       //do something based on a RT variable"
+echo "  }"
+echo "}"
+
+  
+#exit
