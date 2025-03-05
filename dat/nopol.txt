@@ -1,0 +1,20 @@
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047829*: Not cooked
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047830*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047833*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047834*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047837*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047843*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047848*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047849*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047853*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047854*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047855*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047856*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047857*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047892*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047900*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047904*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047908*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_047916*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_048068*: No such file or directory
+ls /mss/clas/g8b/production/Pass1/v1/POL/POL_DST_048167*: No such file or directory
