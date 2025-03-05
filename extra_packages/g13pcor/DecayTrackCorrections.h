@@ -1,114 +1,57 @@
-/*
-*
-*  vector4.c
-*
+//Author: Paul Mattione (12/14/2005)
+
+/* DecayTrackCorrections.h:
+   This code contains the variable and function declarations for the DecayTrackCorrections.C code.
+   For detailed information on this code, refer to DecayTrackCorrections.C
 */
 
-#include <math.h>
+#ifndef DecayTrackCorrections_h
+#define DecayTrackCorrections_h
+
+#include <iostream>
+#include <sstream>
+#include <string.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <ntypes.h>
-#include <kinematics.h>
+#include <vector>
+#include <math.h>
+#include "TObject.h"
+#include "TObjArray.h"
+#include "TFile.h"
+#include "TH2D.h"
+#include "TF1.h"
+#include "TF2.h"
+#include "TF3.h"
+#include "TVector3.h"
+#include "TLorentzVector.h"
+#include "DecayTrackFunctions.h"
+//#include "DecayCaldbServer.h"
 
-float v4dot(vector4_t p1,vector4_t p2)
-{
-  float dot;
+using namespace std;
 
-  dot = p1.t * p2.t - p1.space.x * p2.space.x - p1.space.y * p2.space.y
-          - p1.space.z * p2.space.z;
+void Create_dtcCorrectionFunctions(int locRunNumber);
+double Correct_dtcTrackMomentum(int locRunNumber, int locID, const TLorentzVector &locP4);
+double Correct_dtcTrackMomentum(int locRunNumber, int locID, int locSector, const TLorentzVector &locP4);
+void Correct_dtcTrackAngles(int locRunNumber, int locID, int locSector, double &locBogdanLambda, double &locBogdanPhi);
+void Correct_dtcTrackLocation(int locRunNumber, int locID, int locSector, const vector<double> &locBogdanParamsOrig, vector<double> &locBogdanParamsOrigCorr);
+double Correct_dtcPhotonEnergy(int locRunNumber, double locPhotonEnergy, int locDetectID);
+double Correct_dtcPhotonEnergy_TaggerCalib(int locRunNumber, double locPhotonEnergy, int locDetectID);
 
-  return dot;
-}
+TObjArray* Get_dtcPCorrFuncArray();
+TObjArray* Get_dtcBogdanLambdaCorrFuncArray();
+TObjArray* Get_dtcBogdanPhiCorrFuncArray();
+TObjArray* Get_dtcBogdanD0CorrFuncArray();
+TObjArray* Get_dtcBogdanZ0CorrFuncArray();
+TObjArray* Get_dtcSCPaddleMatchingPositivesFuncArray();
+TObjArray* Get_dtcSCPaddleMatchingNegativesFuncArray();
+TFile* Get_dtcBeamECorrFile();
+TH1D* Get_dtcBeamECorrHist1();
+TH1D* Get_dtcBeamECorrHist2();
 
-float v4mass(vector4_t p)
-{
-  float mag = 0;
-  float mmsq = v4dot(p,p);
+//these don't belong here, but i don't care
+void Setup_dtcSCPaddleMap(int locRunNumber);
+int Determine_dtcSCPaddle(int locRunNumber, double locQ, double locP, double locTheta, double locVertexZ);
+double Determine_dtcThetaFromSCPaddle(int locRunNumber, double locQ, double locP, double locSCPaddle, double locVertexZ);
+double Determine_dtcThetaFromSCPaddle(int locRunNumber, double locQ, double locP, double locSCPaddle, int locVertexZBin);
 
-  if (mmsq >= 0){
-    mag = sqrt(mmsq);
-  } else {
-    mag = -1;
-  }
-
-  return mag;
-}
-float v4magsq(vector4_t p)
-{
-  float magsq;
-
-  magsq = v4dot(p,p);
-
-  return magsq;
-}
-
-vector4_t v4add(vector4_t p1,vector4_t p2)
-{
-  vector4_t sum;
-
-  sum.t = p1.t + p2.t;
-  sum.space.x = p1.space.x + p2.space.x;
-  sum.space.y = p1.space.y + p2.space.y;
-  sum.space.z = p1.space.z + p2.space.z;
-
-  return sum;
-}
-
-vector4_t v4sub(vector4_t p1,vector4_t p2)
-{
-  vector4_t diff;
-
-  diff.t = p1.t - p2.t;
-  diff.space.x = p1.space.x - p2.space.x;
-  diff.space.y = p1.space.y - p2.space.y;
-  diff.space.z = p1.space.z - p2.space.z;
-
-  return diff;
-}
-
-vector4_t v4mult(float factor,vector4_t p)
-{
-  vector4_t result;
-
-  result.t = p.t * factor;
-  result.space.x = p.space.x * factor;
-  result.space.y = p.space.y * factor;
-  result.space.z = p.space.z * factor;
-
-  return result;
-}
-
-vector4_t v4div(float divisor,vector4_t p)
-{
-  vector4_t result;
-
-  result.t = p.t / divisor;
-  result.space.x = p.space.x / divisor;
-  result.space.y = p.space.y / divisor;
-  result.space.z = p.space.z / divisor;
-
-  return result;
-}
-
-
-vector4_t v3_to_v4(vector3_t *vec3, float mass){
-  vector4_t v4;
-  
-  v4.space.x = vec3->x;
-  v4.space.y = vec3->y;
-  v4.space.z = vec3->z;
-
-  v4.t = sqrt(mass*mass + v3dot(v4.space, v4.space));
-
-  return v4;
-}
-
-vector4_t txyz2v4(void *txyz){
-  vector4_t v4;
-  return(*((vector4_t *)(txyz)));
-}
-
-
-void v4print(FILE *stream, vector4_t vec){
-  fprintf(stream, "t: %f, x: %f, y:%f, z:%f\n", vec.t, vec.space.x, vec.space.y, vec.space.z);
-}
-
+#endif
