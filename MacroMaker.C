@@ -99,7 +99,7 @@ void mkexe_with_flag(char *filename,  char *extra, int debug){
   char pwd[4]="./";
   char *libs;
 
-  char compileString[1000];
+  char compileString[10000];  //extended for longer JLab library paths  
 
   ////get $ROOTBEER_SLIB, if not defined
   //if((slibdir = getenv("ROOTBEER_SLIB"))==NULL){};
